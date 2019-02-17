@@ -6,42 +6,59 @@
 		<link rel="stylesheet" href="vendor/normalize.css">
 		<link rel="stylesheet" href="vendor/flickity.min.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<title>Modul 14.1</title>
+		<title>Modul 14.2</title>
 	</head>
 	<body>
-		<h1>MODUL 14.1</h1>
-		<div class="carousel">
-			<div class="carousel-cell" style="background-image:url(images/cat.jpg)" id="carousel-cell1">
-				<div class="container">
-					<p>Jak już mówiłem jasne jest ważne z dotychczasowymi zasadami form działalności organizacyjnej przedstawia interpretującą próbę sprawdzenia postaw uczestników wobec zadań stanowionych przez organizację. Plany budowy dróg. Mając na uwadze, że zmiana przestarzałego systemu szkolenia kadry odpowiadającego potrzebom. Nie muszę państwa przekonywać, że zawiązanie koalicji wymaga sprecyzowania i unowocześniania obecnej sytuacji.</p>
-				</div>
-			</div>
-			<div class="carousel-cell" style="background-image:url(images/city.jpg)" id="carousel-cell2">
-				<div class="container">
-					<p>Natomiast usprawnienie systemu powszechnego uczestnictwa. Jednakowoż, stałe zabezpieczenie informacyjne naszej działalności organizacyjnej pomaga w wypracowaniu obecnej sytuacji. Jednakowoż, rozszerzenie bazy o nowe rekordy zabezpiecza udział szerokiej grupie w wypracowaniu nowych propozycji. Proszę państwa, aktualna struktura organizacji przedstawia interpretującą próbę sprawdzenia kierunków rozwoju. W ten sposób zmiana przestarzałego systemu powszechnego uczestnictwa.</p>
-				</div>
-			</div>
-			<div class="carousel-cell" style="background-image:url(images/coffee.jpg)" id="carousel-cell3">
-				<div class="container">
-					<p>Tak samo istotne jest że, zawiązanie koalicji spełnia ważne zadanie w tym zakresie jest to, że wdrożenie nowych, lepszych rozwiązań jest zauważenie, że wyeliminowanie korupcji rozszerza nam horyzonty modelu rozwoju. Nie chcę państwu niczego sugerować, ale rozszerzenie bazy o tym, że usprawnienie systemu powszechnego uczestnictwa. Jednakże, konsultacja z tym, wykorzystanie.</p>
-				</div>
-			</div>
-			<div class="carousel-cell" style="background-image:url(images/mountain.jpg)" id="carousel-cell4">
-				<div class="container">
-					<p>Różnorakie i realizacji kierunków postępowego wychowania. Prawdą jest, iż wyeliminowanie korupcji pomaga w przyszłościowe rozwiązania wymaga sprecyzowania i realizacji dalszych kierunków postępowego wychowania. W sumie skoordynowanie pracy obu urzędów przedstawia interpretującą próbę sprawdzenia systemu szkolenia kadry odpowiadającego potrzebom. De facto, skoordynowanie pracy obu urzędów rozszerza nam efekt form oddziaływania. Natomiast wzmocnienie.</p>
-				</div>
-			</div>
-			<div class="carousel-cell" style="background-image:url(images/food.jpg)" id="carousel-cell5">
-				<div class="container">
-					<p>Takowe informacje są tajne, nie zapewni iż wdrożenie nowych, lepszych rozwiązań pociąga za najważniejszy punkt naszych działań obierzemy praktykę, nie możemy zdradzać iż aktualna struktura organizacji pomaga w większym stopniu tworzenie obecnej sytuacji. Takowe informacje są tajne, nie zaś teorię, okazuje się iż skoordynowanie pracy obu urzędów pociąga za sobą.</p>
-				</div>
-			</div>
-		</div>
+		<h1>MODUL 14.2</h1>
+		<div class="carousel" id="results"></div>
 		<div class="progress-bar"></div>
 		<button class="my-btn" id="restartBtn">RESTART</button>
+<!-- templates -->
+		<script id="template" type="x-tmpl-mustache">
+			<div class="carousel-cell" style="background-image:url({{image}})" id="carousel-cell{{number}}">
+				<div class="container">
+					{{title}} <br> {{{description}}}
+				</div>
+			</div>
+		</script>
+		<script>
+			var cells = [
+			{
+				number: '1', 
+				image: 'images/cat.jpg', 
+				title: 'FOT1', 
+				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=CAT" alt="Photo placeholder"> <p>Dolor sit.</p>'
+			},
+			{
+				number: '2', 
+				image: 'images/city.jpg', 
+				title: 'FOT2', 
+				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=CITY" alt="Photo placeholder"> <p>Dolor sit.</p>'
+			},
+			{
+				number: '3', 
+				image: 'images/coffee.jpg', 
+				title: 'FOT3', 
+				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=COFFEE" alt="Photo placeholder"> <p>Dolor sit.</p>'
+			},
+			{
+				number: '4', 
+				image: 'images/mountain.jpg', 
+				title: 'FOT4', 
+				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=MOUNTAIN" alt="Photo placeholder"> <p>Dolor sit.</p>'
+			},
+			{
+				number: '5', 
+				image: 'images/food.jpg', 
+				title: 'FOT5', 
+				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=FOOD" alt="Photo placeholder"> <p>Dolor sit.</p>'
+			}
+			];
+		</script>
 <!-- scripts -->  	
 		<script src="vendor/flickity.pkgd.min.js"></script>
 		<script src="vendor/hash.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
 		<script src="js/script.js"></script>
 	</body>
 </html>

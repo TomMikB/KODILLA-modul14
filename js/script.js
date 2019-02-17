@@ -1,6 +1,16 @@
 'use strict';
 
 (function(){
+
+	var templateList = document.getElementById('template').innerHTML;
+	Mustache.parse(templateList);
+	var cell = '';
+	for(var i = 0; i < cells.length; i++){
+		console.log(cells);
+		cell += Mustache.render(templateList, {number: cells[i].number, image: cells[i].image, title: cells[i].title, description: cells[i].description});
+	}
+	results.insertAdjacentHTML('beforeend', cell);
+
 	var carousel = document.querySelector('.carousel');
 	var flkty = new Flickity(carousel, {
 		pageDots: false,
