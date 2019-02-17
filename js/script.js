@@ -9,8 +9,8 @@
 	var restart = document.getElementById('restartBtn');
 	addEventListener('click', function(event) {
 		if (!matchesSelector (event.target, '.my-btn')) {
-    		return;
-    	}
+			return;
+		}
 		flkty.select(0);
 	});
 	var progressBar = document.querySelector('.progress-bar');
