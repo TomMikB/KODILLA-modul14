@@ -19,6 +19,7 @@ p {
 .container {
 	max-width: 900px;
 	text-align: center;
+	margin: 0 auto;
 }
 
 .carousel-cell {
@@ -48,4 +49,10 @@ p {
 	height: 10px;
 	width: 0;
 	background-color: yellow;
+}
+
+#map {
+	height: 50vh;
+	min-height: 250px;
+	width: 100%;
 }

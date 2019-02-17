@@ -6,13 +6,16 @@
 		<link rel="stylesheet" href="vendor/normalize.css">
 		<link rel="stylesheet" href="vendor/flickity.min.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<title>Modul 14.2</title>
+		<title>Modul 14.3</title>
 	</head>
 	<body>
-		<h1>MODUL 14.2</h1>
+		<h1>MODUL 14.3</h1>
 		<div class="carousel" id="results"></div>
 		<div class="progress-bar"></div>
 		<button class="my-btn" id="restartBtn">RESTART</button>
+		<div class="container">
+			<div id="map"></div>
+		</div>
 <!-- templates -->
 		<script id="template" type="x-tmpl-mustache">
 			<div class="carousel-cell" style="background-image:url({{image}})" id="carousel-cell{{number}}">
@@ -27,31 +30,36 @@
 				number: '1', 
 				image: 'images/cat.jpg', 
 				title: 'FOT1', 
-				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=CAT" alt="Photo placeholder"> <p>Dolor sit.</p>'
+				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=CAT" alt="Photo placeholder"> <p>Dolor sit.</p>', 
+				coords: {lat: 53.432, lng: 14.548} //szczecin
 			},
 			{
 				number: '2', 
 				image: 'images/city.jpg', 
 				title: 'FOT2', 
-				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=CITY" alt="Photo placeholder"> <p>Dolor sit.</p>'
+				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=CITY" alt="Photo placeholder"> <p>Dolor sit.</p>', 
+				coords: {lat: 51.109, lng: 17.032} //wrocław
 			},
 			{
 				number: '3', 
 				image: 'images/coffee.jpg', 
 				title: 'FOT3', 
-				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=COFFEE" alt="Photo placeholder"> <p>Dolor sit.</p>'
+				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=COFFEE" alt="Photo placeholder"> <p>Dolor sit.</p>', 
+				coords: {lat: 52.239, lng: 21.045} //warszawa
 			},
 			{
 				number: '4', 
 				image: 'images/mountain.jpg', 
 				title: 'FOT4', 
-				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=MOUNTAIN" alt="Photo placeholder"> <p>Dolor sit.</p>'
+				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=MOUNTAIN" alt="Photo placeholder"> <p>Dolor sit.</p>', 
+				coords: {lat: 54.348, lng: 18.653} //gdańsk
 			},
 			{
 				number: '5', 
 				image: 'images/food.jpg', 
 				title: 'FOT5', 
-				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=FOOD" alt="Photo placeholder"> <p>Dolor sit.</p>'
+				description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200?text=FOOD" alt="Photo placeholder"> <p>Dolor sit.</p>', 
+				coords: {lat: 52.408, lng: 16.934} //poznań
 			}
 			];
 		</script>
@@ -60,5 +68,6 @@
 		<script src="vendor/hash.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
 		<script src="js/script.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2lv0cgOJjUvEntwGBm0QX4rzx263f9b0&callback=initMap"></script>
 	</body>
 </html>
