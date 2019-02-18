@@ -7,7 +7,7 @@
 	var carousel = document.querySelector('.carousel');
 	var restart = document.getElementById('restartBtn');
 	var progressBar = document.querySelector('.progress-bar');
-	var infos = document.getElementById('infos');
+	var markers = [];
 
 	Mustache.parse(templateList);
 	for (var i = 0; i < cells.length; i++){
@@ -34,14 +34,24 @@
 
 	window.initMap = function() {
 		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 7,
-			center: cells[0].coords
+			zoom: 6,
+			center: cells[0].coords, 
 		});
-		for (var i=0; i < cells.length; i++){
-			var marker = new google.maps.Marker({
+
+		flkty.on('change', function(index) {
+			map.setCenter(cells[index].coords);
+		});
+
+		for (var i = 0; i < cells.length; i++){
+			markers[i] = new google.maps.Marker({
 				position: cells[i].coords,
-				map: map, 
+				map: map
 			});
+			(function(i) {
+				markers[i].addListener('click', function(){
+					flkty.select(i);
+				});
+			})(i);
 		}
 	};
 
